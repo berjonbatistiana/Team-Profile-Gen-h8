@@ -27,6 +27,7 @@ const Employee = require("./lib/Employee");
 // `output` folder. You can use the variable `outputPath` above target this location.
 // Hint: you may need to check if the `output` folder exists and create it if it
 // does not.
+// ------- OK 
 
 // HINT: each employee type (manager, engineer, or intern) has slightly different
 // information; write your code to ask different questions via inquirer depending on
@@ -68,7 +69,7 @@ async function init() {
         console.log(e)
     }
 
-    console.log(render(addedMembers))
+    fs.writeFile(outputPath, render(addedMembers), err => err ? console.log(err) : console.log('success'));
 
 }
 
